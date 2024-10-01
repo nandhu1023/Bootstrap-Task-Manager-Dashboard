@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <!--- navbar--->
+    <header>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">Task Manager</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#rk">
+                    <span class="navbar-toggler-icon">
+
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="rk">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Tasks</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- breadcrumb-->
+         <nav class="m-3">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                <li class="breadcrumb-item active">Tasks</li>
+            </ol>
+         </nav>
+    </header>
+    <main>
+        <div class="container">
+            <!--buttons-- for triggering elements-->
+            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#bubu">Add Task</button>
+
+            <!-- cards- used for displaying content in structured format-->
+             <div class="card mt-3">
+                <div class="card-header">
+                    Task List
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item active d-flex justify-content-between align-items-center">Task 1
+                            <span class="badge bg-success rounded-pill">New</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Task 2
+                            <span class="badge bg-warning rounded-pill">In Progress</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Task 3
+                            <span class="badge bg-danger rounded-pill">Cancel</span>
+                        </li>
+                    </ul>
+                </div>  
+                <!--modal:-->
+                <div class="modal fade" id="bubu">
+                    <div class="modal-dialog">
+                        <diiv class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Add Task</h5>
+                                <button type="button" class="btn-close " data-bs-dismiss="modal" ></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="">
+                                    <div class="mb-3">
+                                        <label for="taskname" class="form-label">Task Name</label>
+                                        <input class="form-control"type="test" placeholder="enter your task name" id="taskname">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="taskdescription" class="form-label">Task description</label>
+                                        <textarea class="form-control" type="test" placeholder="enter your task description" id="taskdescription"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="taskstatus">Task status</label>
+                                        <select class="form-select" name="" id="">
+                                            <option selected>New</option>
+                                            <option selected>In Progress</option>
+                                            <option selected>Completed</option>
+                                            <option selected>Canceled</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Save Task</button>
+                                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+
+                        </diiv>
+                    </div>
+
+                </div>  
+
+             </div>
+             <!--dropdowns -->
+             <div class="dropdown mt-3">
+                <button class=" btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">Actions</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Edit Task</a></li>
+                    <li><a  class="dropdown-item" href="#">Delete Task</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Mark as completed</a></li>
+                </ul>
+             </div>
+             <!--Navs and Tabs-->
+             <ul class="nav nav-tabs mt-3">
+                <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#alltasks" type="button">All Tasks</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#pending" type="button">Pending Tasks</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#completed" type="button">Completed Tasks</button></li>
+             </ul>
+             <div class="tab-content">
+                <div class="tab-pane show fade active" id="alltasks">
+                    <p>All the tasks will be displayed here</p>
+                </div>
+                <div class="tab-pane fade" id="pending">
+                    <p>Pending  tasks will be displayed here</p>
+                </div>
+                <div class="tab-pane fade" id="completed">
+                    <p>completed tasks will be displayed here</p>
+                </div>
+              
+             </div>
+               <!--pagination-->
+               <div>
+                <ul class="pagination mt-4 justify-content-center">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="#"> 1</a></li>
+                    <li class="page-item"><a class="page-link" href="#"> 2</a></li>
+                    <li class="page-item"><a class="page-link" href="#"> 3</a></li>
+                    <li class="page-item disabled"><a class="page-link" href="#"> Next</a></li>
+                </ul>
+                </div>
+
+                <!--tooltip-->
+                <button class="btn btn-info mt-4" data-bs-toggle="tooltip" data-bs-title="Navagiting to Document Page" data-bs-placement="top">Go to documents</button>
+            
+                <!--popover-->
+                <button type="button" class="btn btn-danger mt-4 ms-2" data-bs-toggle="popover" title="Task Update" data-bs-content="this menu will save all  curresntchanges in the task at one time this takes some time for processing." data-bs-placement="top">Save Changes</button>
+
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.10"></script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script >
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
+</body>
+</html>
